@@ -11,8 +11,8 @@ public class Session8 {
             return;
         }
         if (help.equals("-v")) {
-            System.out.println("Version 10.12.0.1");
-            System.out.println("Usage: java Session8 <number1> <operator> <number2>");
+            System.out.println("Version 21.12.0.1");
+            System.out.println("Usage: java Session8 <number1> <operator> <number2> <name>");
             return;
         }
 
@@ -23,7 +23,7 @@ public class Session8 {
 
         if (args.length != 4) {
             System.out.println("Error : Invalid number of arguments");
-            System.out.println("Usage: java Session8 <number1> <operator> <number2>");
+            System.out.println("Usage: java Session8 <number1> <operator> <number2> <name>");
             return;
         }
 
@@ -34,7 +34,7 @@ public class Session8 {
 
         } catch (NumberFormatException err) {
             System.out.println("Error : Invalid number format");
-            System.out.println("Usage: java Session8 <number1> <operator> <number2>");
+            System.out.println("Usage: java Session8 <number1> <operator> <number2> <name>" );
             return;
         }
 
