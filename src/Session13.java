@@ -56,7 +56,16 @@ class Student {
         this.year = year;
     }
 
-    /*void addNewStudent(int rollno, String name, int age, String year) {
+    @Override
+    public String toString() {
+        return "Student{" +
+                "rollno=" + rollno +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", year='" + year + '\'' +
+                '}';
+    }
+/*void addNewStudent(int rollno, String name, int age, String year) {
         System.out.println("Adding new student");
         this.rollno = rollno;
         this.name = name;
