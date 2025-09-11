@@ -3,13 +3,14 @@ import java.util.Scanner;
 
 public class Session14 {
 
-    public static ArrayList<Customer> customer_list = new ArrayList<Customer>();
+    public static ArrayList<Customer> customer_list = new ArrayList<>();
+
 
     public static class Customer{
-        private int    acc_no;
-        private String name;
+        private final int    acc_no;
+        private final String name;
         private double account_balance;
-        private String address;
+        private final String address;
 
         //Constructor
         Customer(int acc_no, String name, double account_balance, String address) {
@@ -57,7 +58,7 @@ public class Session14 {
             System.out.println("3. Display Customer Details ");
             System.out.println("4. Deposit Money ");
             System.out.println("Q. Quit Application ");
-            System.out.println("Enter Choice 1 - 4 (Q to Quit) : \n");
+            System.out.print("Enter Choice 1 - 4 (Q to Quit) : ");
             String choice = input_scanner.nextLine();
 
             if (choice.equals("Q") || choice.equals("q")) {
@@ -75,7 +76,7 @@ public class Session14 {
 
     public static void fn_menu(String choice, Scanner input_scanner) {
 
-        int user_choice = 0;
+        int user_choice;
         try {
             user_choice = Integer.parseInt(choice);
 
@@ -98,13 +99,13 @@ public class Session14 {
 
 
         System.out.println("Add Customer \n");
-        System.out.println("Enter Customer Name : ");
+        System.out.print("Enter Customer Name : ");
         String customer_name = input_scanner.nextLine();
-        System.out.println("Enter Customer Address : ");
+        System.out.print("Enter Customer Address : ");
         String customer_address = input_scanner.nextLine();
-        System.out.println("Enter Customer Account Number : ");
+        System.out.print("Enter Customer Account Number : ");
         int customer_acc_no = Integer.parseInt(input_scanner.nextLine());
-        System.out.println("Enter Customer Account Balance : ");
+        System.out.print("Enter Customer Account Balance : ");
         double customer_balance = Double.parseDouble(input_scanner.nextLine());
 
         customer_list.add(new Customer(customer_acc_no, customer_name, customer_balance, customer_address));
@@ -118,9 +119,9 @@ public class Session14 {
 
 
         System.out.println("Withdraw Money \n");
-        System.out.println("Enter Customer Account Number : ");
+        System.out.print("Enter Customer Account Number : ");
         int customer_acc_no = Integer.parseInt(input_scanner.nextLine());
-        System.out.println("Enter withdraw amount : ");
+        System.out.print("Enter withdraw amount : ");
         double withdraw_amount = 0.00;
         try {
          withdraw_amount = Double.parseDouble(input_scanner.nextLine());
@@ -141,15 +142,15 @@ public class Session14 {
 
 
         System.out.println("Deposit Money \n");
-        System.out.println("Enter Customer Account Number : ");
+        System.out.print("Enter Customer Account Number : ");
         int customer_acc_no = Integer.parseInt(input_scanner.nextLine());
-        System.out.println("Enter deposit amount : ");
+        System.out.print("Enter deposit amount : ");
         double deposit_amount = 0.00;
         try {
             deposit_amount = Double.parseDouble(input_scanner.nextLine());
         }
-        catch(NumberFormatException werror) {
-            System.out.println("Catch : Enter correct amount : " + werror);
+        catch(NumberFormatException num_error) {
+            System.out.println("Catch : Enter correct amount : " + num_error);
         }
 
         for (Customer customer : customer_list) {
@@ -167,7 +168,7 @@ public class Session14 {
         // ArrayList customer_list= {Customer@1081, Customer@1095}  0 , 1 = 2
 
         for (int i = 0; i < customer_list.size(); i++) { //i < 2, 100, 100000
-            customer_list.get(i).display();  //pritnf("Name = %s",customer[i])
+            customer_list.get(i).display();  //printf("Name = %s",customer[i])
             //customer_list(0) = Customer@1081 customer_list(1) = Customer@1095
             //Customer@1081.name = "Amit"
             //Customer@1095.name = "Omkar"
@@ -180,7 +181,7 @@ public class Session14 {
             //Customer@1095.name = "Omkar"
         }
 
-        System.out.println("Enter Customer Name \n");
+        System.out.print("Enter Customer Name \n");
         String customer_name = input_scanner.nextLine();
 
         for (Customer customer : customer_list) {
